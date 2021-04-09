@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::post('contact', [ContactController::class, 'contactStore'])->name('contact.store');
+// ******** Admin panel Route ********
 Route::get('admin', [AuthenticationController::class, 'login'])->name('login');
 Route::post('admin', [AuthenticationController::class, 'authCheck'])->name('login.check');
 
@@ -26,5 +30,6 @@ Route::middleware('auth')->group( function () {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
-
+    
+    Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 });

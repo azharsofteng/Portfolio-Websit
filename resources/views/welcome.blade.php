@@ -491,7 +491,7 @@
                     <div class="col-md-6 col-lg-6 col-sm-12">
                         <div class="contact-block">
                             <h2>Contact Form</h2>
-                            <form method="POST" action="{{ url('contact') }}">
+                            <form method="POST" action="{{ route('contact.store') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -524,7 +524,7 @@
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="submit-button">
-                                            <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                                            <button class="btn btn-common mb-2" id="submit" type="submit">Send Message</button>
                                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                                             <div class="clearfix"></div>
                                         </div>

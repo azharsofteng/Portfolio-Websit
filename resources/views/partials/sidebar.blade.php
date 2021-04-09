@@ -9,7 +9,7 @@
     </div>
     <ul class="app-menu">
         <li>
-            <a class="app-menu__item active" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a>
+            <a class="app-menu__item {{ Request::is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a>
         </li>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-cog"></i><span class="app-menu__label">Adminastator</span><i class="treeview-indicator fa fa-angle-right"></i></a>
@@ -40,7 +40,7 @@
             </ul>
         </li>
         <li>
-            <a class="app-menu__item" href="charts.html"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">All Contact</span></a>
+            <a class="app-menu__item {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact.index') }}"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">All Contact</span></a>
         </li>
         <li>
             <a class="app-menu__item" href="{{ route('logout') }}"><i class="app-menu__icon fa fa-power-off"></i><span class="app-menu__label">LogOut</span></a>
