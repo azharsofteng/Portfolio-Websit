@@ -23,7 +23,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-
+    <style>
+      .hero-area-bg {
+        background: url('{{ asset($about->cover_picture) }}') no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
 
@@ -40,7 +45,7 @@
               <span class="icon-menu"></span>
               <span class="icon-menu"></span>
             </button>
-            <a href="index.html" class="navbar-brand"><img style="height: 70px;" src="{{ asset('img/logo2.png') }}" alt=""></a>
+            <a href="{{ route('home') }}" class="navbar-brand"><img style="height: 70px;" src="{{ asset('img/logo2.png') }}" alt=""></a>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
@@ -111,23 +116,23 @@
             <div class="col-md-12 col-sm-12 text-center">
               <div class="contents">
                 <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi This is</h5>
-                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Md Ohiduzzaman Naim</h2>
-                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Technical IT Support Engineer CBHC,DGHS</p>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">{{ $about->name }}</h2>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">{{ $about->designation }}</p>
                 <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
                   <li>
-                    <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+                    <a target="_blank" class="facebook" href="{{ $about->facebook }}"><i class="icon-social-facebook"></i></a>
                   </li>
                   <li>
-                    <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
+                    <a target="_blank" class="twitter" href="{{ $about->twitter }}"><i class="icon-social-twitter"></i></a>
                   </li>
                   <li>
-                    <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+                    <a target="_blank" class="instagram" href="{{ $about->instagram }}"><i class="icon-social-instagram"></i></a>
                   </li>
                   <li>
-                    <a class="linkedin" href="#"><i class="icon-social-linkedin"></i></a>
+                    <a target="_blank" class="linkedin" href="{{ $about->linkedin }}"><i class="icon-social-linkedin"></i></a>
                   </li>
                   <li>
-                    <a class="google" href="#"><i class="icon-social-google"></i></a>
+                    <a target="_blank" class="google" href="mailto:{{ $about->email }}"><i class="icon-social-google"></i></a>
                   </li>
                 </ul>
                 <div class="header-button wow fadeInUp" data-wow-delay="1s">
@@ -149,27 +154,27 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-              <img class="img-fluid" src="{{ asset('img/about/about-1.jpg') }}" alt="">
+              <img class="img-fluid" src="{{ asset($about->image) }}" alt="">
             </div>
           </div> 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
               <h3>Hi Guys!</h3>
-              <p>Est diam venenatis arcu lacus ad. Duis quis eros. Cursus et rutrum eleifend sollicitudin lacinia justo id turpis. Nec convallis integer. Odio eget duis. Nulla aenean et. Blandit varius sollicitudin. Pellentesque leo primis neque urna magnis. Elit ut sollicitudin. Et est a nam dolores eget itaque sagittis et parturient duis est eleifend sociis rutrum odio viverra integer.</p>
+              <p>{{ $about->cover_letter }}</p>
               <div class="about-profile">
                 <ul class="admin-profile">
-                  <li><span class="pro-title"> Name </span> <span class="pro-detail">Md Ohiduzzaman Naim</span></li>
-                  <li><span class="pro-title"> Age </span> <span class="pro-detail">23 Years</span></li>
-                  <li><span class="pro-title"> Experience </span> <span class="pro-detail">5 Years</span></li>
-                  <li><span class="pro-title"> Country </span> <span class="pro-detail">Bangladesh</span></li>
-                  <li><span class="pro-title"> Location </span> <span class="pro-detail">Moakhali, Dahaka</span></li>
-                  <li><span class="pro-title"> e-mail </span> <span class="pro-detail">email@example.com</span></li>
-                  <li><span class="pro-title"> Phone </span> <span class="pro-detail">+ (00) 123 456 789</span></li>
-                  <li><span class="pro-title"> Freelance </span> <span class="pro-detail">Available</span></li>
+                  <li><span class="pro-title"> Name </span> <span class="pro-detail">{{ $about->name }}</span></li>
+                  <li><span class="pro-title"> Age </span> <span class="pro-detail">{{ $about->age }} Years</span></li>
+                  <li><span class="pro-title"> Experience </span> <span class="pro-detail">{{ $about->experience }} Years</span></li>
+                  <li><span class="pro-title"> Country </span> <span class="pro-detail">{{ $about->country }}</span></li>
+                  <li><span class="pro-title"> Location </span> <span class="pro-detail">{{ $about->location }}</span></li>
+                  <li><span class="pro-title"> e-mail </span> <span class="pro-detail">{{ $about->email }}</span></li>
+                  <li><span class="pro-title"> Phone </span> <span class="pro-detail">{{ $about->phone }}</span></li>
+                  <li><span class="pro-title"> Freelance </span> <span class="pro-detail">{{ $about->freelance }}</span></li>
                 </ul>
               </div>
-              <a href="#" class="btn btn-common"><i class="icon-paper-clip"></i> Download Resume</a>
-              <a href="#" class="btn btn-danger"><i class="icon-speech"></i> Contact Me</a>
+              <a href="{{ asset($about->resume) }}" download class="btn btn-common"><i class="icon-paper-clip"></i> Download Resume</a>
+              <a href="#contact" class="btn btn-danger"><i class="icon-speech"></i> Contact Me</a>
             </div>
           </div>   
         </div>
@@ -339,6 +344,7 @@
                   <img src="{{ asset('img/gallery/img-1.jpg') }}" alt="" />  
                   <div class="overlay">
                     <div class="icons">
+                      <a href="" class="title"><p>Lorem, ipsum dolor.</p></a>
                       <a class="lightbox preview" href="{{ asset('img/gallery/img-1.jpg') }}">
                         <i class="icon-eye"></i>
                       </a>
@@ -541,21 +547,21 @@
                                     <div class="contact-icon">
                                         <i class="fa fa-map-marker"></i>
                                     </div>
-                                    <p>San Francisco, CA</p>
+                                    <p>{{ $about->location }}</p>
                                 </div>
                                 <div class="single-contact">
                                     <div class="contact-icon">
                                         <i class="fa fa-envelope"></i>
                                     </div>
                                     <p><a href="mailto:hello@tom.com">hello@tom.com</a></p>
-                                    <p><a href="mailto:tomsaulnier@gmail.com">tomsaulnier@gmail.com</a></p>
+                                    <p><a href="mailto:{{ $about->email }}">{{ $about->email }}</a></p>
                                 </div>
                                 <div class="single-contact">
                                     <div class="contact-icon">
                                         <i class="fa fa-phone"></i>
                                     </div>
-                                    <p><a href="#">+ (00) 123 456 789</a></p>
-                                    <p><a href="#">+ (00) 123 344 789</a></p>
+                                    <p><a href="#">{{ $about->phone }}</a></p>
+                                    <p><a href="#">{{ $about->telephone }}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -595,7 +601,7 @@
                   <a class="instagram" href="#"><i class="icon-social-google"></i></a>
                 </li>
               </ul>
-              <p>Copyright © 2018 UIdeck All Right Reserved</p>
+              <p>Copyright © {{ date('Y') }} Naim All Right Reserved</p>
             </div>
           </div>
         </div>

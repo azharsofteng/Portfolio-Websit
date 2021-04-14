@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AuthenticationController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('contact', [ContactController::class, 'contactStore'])->name('contact.store');
 // ******** Admin panel Route ********
@@ -34,6 +33,8 @@ Route::middleware('auth')->group( function () {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
+
+    Route::resource('category', CategoryController::class)->except('create', 'show');
     
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 });

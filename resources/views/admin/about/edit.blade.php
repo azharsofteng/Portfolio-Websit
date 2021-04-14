@@ -1,16 +1,11 @@
 @extends('layouts.admin-master')
 @section('title','Contact List')
 @push('admin-css')
-    <style>
-        .form-group{
-            margin-bottom: 5px;
-        }
-    </style>
 @endpush
 @section('admin_content')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-th-list"></i> About Data Update</h1>
+        <h1><i class="fa fa-user"></i> About Data Update</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>

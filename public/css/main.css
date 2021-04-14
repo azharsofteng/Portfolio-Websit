@@ -26,7 +26,7 @@ h1, h2, h3, h4 {
 }
 
 .script-font {
-  font-family: 'Shadows Into Light', cursive;
+  /* font-family: 'Shadows Into Light', cursive; */
 }
 
 a {
@@ -707,10 +707,6 @@ a.back-to-top:hover, a.back-to-top:focus {
 /* ==========================================================================
 3. Hero Area
 ========================================================================== */
-.hero-area-bg {
-  background: url(../img/hero-area.jpg) no-repeat;
-  background-size: cover;
-}
 
 #hero-area {
   color: #fff;
@@ -1059,9 +1055,10 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 }
 
 .footer-area .footer-text p {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 20px;
   color: #fff;
+  letter-spacing: 2px;
 }
 
 .footer-area .footer-text p a {

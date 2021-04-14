@@ -63,6 +63,7 @@ class AboutController extends Controller
         $about->name = $request->name;
         $about->email = $request->email;
         $about->phone = $request->phone;
+        $about->telephone = $request->telephone;
         $about->age = $request->age;
         $about->experience = $request->experience;
         $about->country = $request->country;
