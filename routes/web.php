@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ContactController;
@@ -27,6 +28,9 @@ Route::get('admin', [AuthenticationController::class, 'login'])->name('login');
 Route::post('admin', [AuthenticationController::class, 'authCheck'])->name('login.check');
 
 Route::middleware('auth')->group( function () {
+
+    Route::get('about', [AboutController::class, 'edit'])->name('about.edit');
+    Route::put('about/{about}', [AboutController::class, 'update'])->name('about.update');
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');

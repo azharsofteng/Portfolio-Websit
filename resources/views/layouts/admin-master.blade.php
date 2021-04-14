@@ -97,6 +97,6 @@
                 ga("send", "pageview");
             }
         </script>
-        @stack('adminjs')
+        @stack('admin-js')
     </body>
 </html>

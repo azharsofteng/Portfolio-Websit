@@ -15,7 +15,7 @@
             <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-cog"></i><span class="app-menu__label">Adminastator</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li>
-                    <a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Update About</a>
+                    <a class="treeview-item" href="{{ route('about.edit') }}"><i class="icon fa fa-circle-o"></i> Update About</a>
                 </li>
                 <li>
                     <a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a>
