@@ -19,6 +19,7 @@ class CreatePortfoliosTable extends Migration
                 ->constrained('categories')
                 ->onDelete('cascade');
             $table->string('name');
+            $table->string('slug');
             $table->string('url')->nullable();
             $table->string('image')->nullable();
             $table->softDeletes();

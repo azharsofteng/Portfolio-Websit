@@ -29,7 +29,7 @@
                     <a class="treeview-item" href="{{ route('category.index') }}"><i class="icon fa fa-circle-o"></i> Add Category</a>
                 </li>
                 <li>
-                    <a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Add Portfolio </a>
+                    <a class="treeview-item" href="{{ route('portfolio.create') }}"><i class="icon fa fa-circle-o"></i> Add Portfolio </a>
                 </li>
             </ul>
         </li>

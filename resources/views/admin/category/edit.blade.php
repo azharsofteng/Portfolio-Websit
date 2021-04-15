@@ -1,13 +1,12 @@
 @extends('layouts.admin-master')
-@section('title','Contact List')
+@section('title','Edit Category')
 @section('admin_content')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-user"></i> Add New Category</h1>
+        <h1><i class="fa fa-user"></i> Edit Category</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
-        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a class="btn btn-info btn-sm" href="{{ route('category.index') }}">Category List</a></li>
     </ul>
 </div>
 <div class="row">

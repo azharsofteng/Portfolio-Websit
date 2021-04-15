@@ -1,5 +1,5 @@
 @extends('layouts.admin-master')
-@section('title','Contact List')
+@section('title','Add Category')
 @section('admin_content')
 <div class="app-title">
     <div>
