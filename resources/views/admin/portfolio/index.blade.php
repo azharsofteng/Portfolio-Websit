@@ -3,7 +3,7 @@
 @section('admin_content')
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-user"></i> &nbsp; All Portfolio List</h1>
+        <h1><i class="fa fa-briefcase"></i> &nbsp; All Portfolio List</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item active"><a class="btn btn-info btn-sm" href="{{ route('portfolio.create') }}">Portfolio Create</a></li>

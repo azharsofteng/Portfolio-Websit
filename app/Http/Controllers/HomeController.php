@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,6 +13,7 @@ class HomeController extends Controller
     {
         $about = About::first();
         $categories = Category::all();
-        return view('website', compact('about', 'categories'));
+        $portfolios = Portfolio::latest()->get();
+        return view('website', compact('about', 'categories', 'portfolios'));
     }
 }

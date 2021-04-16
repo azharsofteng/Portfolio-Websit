@@ -322,7 +322,7 @@
                                 All
                             </a>
                             @foreach ($categories as $item)
-                            <a class="filter btn btn-common" data-filter=".design">
+                            <a class="filter btn btn-common" data-filter=".{{ $item->id }}">
                                 {{ $item->name }}
                             </a>
                             @endforeach
@@ -332,109 +332,26 @@
 
                     <!-- Portfolio Recent Projects -->
                     <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-1.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a href="" class="title"><p>Lorem, ipsum dolor.</p></a>
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-1.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
+                        @foreach ($portfolios as $portfolio)
+                            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix {{ $portfolio->category->id }} print">
+                                <div class="portfolio-item">
+                                    <div class="shot-item">
+                                        <img src="{{ asset($portfolio->image) }}" alt="" />
+                                        <div class="overlay">
+                                            <div class="icons">
+                                                <a class="lightbox preview" href="{{ asset($portfolio->image) }}">
+                                                    <i class="icon-eye"></i>
+                                                </a>
+                                                <a class="link" href="#">
+                                                    <i class="icon-link"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-2.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-2.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-3.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-3.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-4.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-4.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-5.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-5.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
-                            <div class="portfolio-item">
-                                <div class="shot-item">
-                                    <img src="{{ asset('img/gallery/img-6.jpg') }}" alt="" />
-                                    <div class="overlay">
-                                        <div class="icons">
-                                            <a class="lightbox preview" href="{{ asset('img/gallery/img-6.jpg') }}">
-                                                <i class="icon-eye"></i>
-                                            </a>
-                                            <a class="link" href="#">
-                                                <i class="icon-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>

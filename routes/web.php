@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,8 @@ Route::middleware('auth')->group( function () {
     Route::resource('category', CategoryController::class)->except('create', 'show');
 
     Route::resource('portfolio', PortfolioController::class)->except('show');
+
+    Route::resource('service', ServiceController::class)->except('show', 'create');
     
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 });
