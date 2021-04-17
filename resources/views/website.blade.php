@@ -230,27 +230,23 @@
                                     <i class="icon-graduation"></i>
                                     <h2 class="timelin-title">Education</h2>
                                 </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">Bsc In CSE - Yale University</h3>
-                                        <span>2012 - 2016</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">Higher Secondary School - San Francisco College</h3>
-                                        <span>2010 - 2012</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">Secondary School - Labratory High School</h3>
-                                        <span>2005 - 2010</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
+                                @forelse ($education_resume as $item)
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{{ $item->degree_and_designation }}</h3>
+                                            <span>{{ $item->session_and_year }}</span>
+                                            <p class="line-text">{{ $item->short_description }}</p>
+                                        </div>
+                                    </li>
+                                @empty
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">Bsc In CSE - Yale University</h3>
+                                            <span>2012 - 2016</span>
+                                            <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
+                                        </div>
+                                    </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
@@ -261,27 +257,23 @@
                                     <i class="icon-briefcase"></i>
                                     <h2 class="timelin-title">Experience</h2>
                                 </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">Art Director - Tesla Inc.</h3>
-                                        <span>Jan 2018 - Present</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">UX/UI Designer - Samsung</h3>
-                                        <span>Nov 2016 - Dec 2017</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content-text">
-                                        <h3 class="line-title">Intern UI Designer - UIdeck</h3>
-                                        <span>Mar 2015 - Oct 2016</span>
-                                        <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                                    </div>
-                                </li>
+                                @forelse ($experience_resume as $item)
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{{ $item->degree_and_designation }}</h3>
+                                            <span>{{ $item->session_and_year }}</span>
+                                            <p class="line-text">{{ $item->short_description }}</p>
+                                        </div>
+                                    </li>
+                                @empty
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">Art Director - Tesla Inc.</h3>
+                                            <span>Jan 2018 - Present</span>
+                                            <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
+                                        </div>
+                                    </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
