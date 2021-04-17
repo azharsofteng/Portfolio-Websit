@@ -26,6 +26,34 @@
         <main class="app-content">
             @yield('admin_content')
         </main>
+
+        {{-- modal --}}
+        <div class="modal fade" id="passwordChange" tabindex="-1" role="dialog" >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{ route('password.change') }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="modal-body">
+                            <label for="">Old Password</label>
+                            <input type="password" name="old_password" class="form-control mb-1" placeholder="Enter Old Password">
+                            <label for="">New Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="Enter New password">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <!-- Essential javascripts for application to work-->
         <script src="{{asset('backend/js/jquery-3.3.1.min.js')}}"></script>
         <script src="{{asset('backend/js/popper.min.js')}}"></script>

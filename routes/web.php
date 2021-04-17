@@ -36,6 +36,7 @@ Route::middleware('auth')->group( function () {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
+    Route::put('/admin', [AuthenticationController::class, 'passwordUpdate'])->name('password.change');
 
     Route::resource('category', CategoryController::class)->except('create', 'show');
 
