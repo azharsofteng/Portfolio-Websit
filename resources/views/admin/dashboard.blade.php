@@ -1,5 +1,12 @@
 @extends('layouts.admin-master')
 @section('title','Home')
+@push('admin-css')
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+@endpush
 @section('admin_content')
 <div class="app-title">
     <div>
@@ -12,40 +19,47 @@
 </div>
 <div class="row">
     <div class="col-md-6 col-lg-3">
-        <div class="widget-small primary coloured-icon">
-            <i class="icon fa fa-users fa-3x"></i>
-            <div class="info">
-                <h4>Users</h4>
-                <p><b>5</b></p>
+        <a href="{{ route('service.index') }}">
+            <div class="widget-small primary coloured-icon">
+                <i class="icon fa fa-briefcase fa-3x"></i>
+                <div class="info">
+                    <h4>Services</h4>
+                    <p><b>{{ $services }}</b></p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-md-6 col-lg-3">
-        <div class="widget-small info coloured-icon">
-            <i class="icon fa fa-envelope fa-3x"></i>
-            <div class="info">
-                <h4>Message</h4>
-                <p><b>25</b></p>
+        <a href="{{ route('contact.index') }}">
+            <div class="widget-small info coloured-icon">
+                <i class="icon fa fa-envelope fa-3x"></i>
+                <div class="info">
+                    <h4>Contact</h4>
+                    <p><b>{{ $contact }}</b></p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-md-6 col-lg-3">
-        <div class="widget-small warning coloured-icon">
-            <i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-                <h4>Projects</h4>
-                <p><b>10</b></p>
+        <a href="{{ route('portfolio.index') }}">
+            <div class="widget-small warning coloured-icon">
+                <i class="icon fa fa-files-o fa-3x"></i>
+                <div class="info">
+                    <h4>Projects</h4>
+                    <p><b>{{ $portfolio }}</b></p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-md-6 col-lg-3">
-        <div class="widget-small danger coloured-icon">
-            <i class="icon fa fa-star fa-3x"></i>
-            <div class="info">
-                <h4>Stars</h4>
-                <p><b>500</b></p>
+        <a href="{{ route('logout') }}">
+            <div class="widget-small danger coloured-icon">
+                <i class="icon fa fa-power-off fa-3x"></i>
+                <div class="info">
+                    <h4>Logout</h4>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 @endsection
