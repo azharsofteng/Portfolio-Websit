@@ -36,6 +36,45 @@ class AuthenticationController extends Controller
         return redirect()->route('login');
     }
 
+    public function profile()
+    {
+        return view('auth.profile');
+    }
+
+    public function profileUpdate(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'user_name' => 'required',
+            'image' => 'mimes:jpg, png, jpeg, bmp'
+        ]);
+
+        $profile = User::findOrFail(Auth::id());
+
+        $profileImage = '';
+        if($request->hasFile('image')) {
+            if(!empty($profile->image) && file_exists($profile->image)) {
+                unlink($profile->image);
+            }
+            $profileImage = $this->imageUpload($request, 'image', 'uploads/user');
+        } else {
+            $profileImage = $profile->image;
+        }
+
+        $profile->name = $request->name;
+        $profile->email = $request->email;
+        $profile->user_name = $request->user_name;
+        $profile->image = $profileImage;
+        $profile->save();
+        
+        if($profile)
+        {
+            return redirect()->back();
+        }
+        return redirect()->back()->withInput();
+    }
+
     // password change
     public function passwordUpdate(Request $request)
     {

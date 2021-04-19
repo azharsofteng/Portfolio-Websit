@@ -12,7 +12,7 @@
                     <button class="dropdown-item" data-toggle="modal" data-target="#passwordChange"><i class="fa fa-cog fa-lg"></i> Settings</button>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a>
+                    <a class="dropdown-item" href="{{ route('profile') }}"><i class="fa fa-user fa-lg"></i> Profile</a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-sign-out fa-lg"></i> Logout</a>

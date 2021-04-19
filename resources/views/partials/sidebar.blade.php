@@ -1,7 +1,7 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
     <div class="app-sidebar__user">
-        <img style="height: 50px; width:50px;" class="app-sidebar__user-avatar" src="{{ asset('default.png') }}" alt="User Image" />
+        <img style="height: 50px; width:50px;" class="app-sidebar__user-avatar" src="{{ asset(Auth::user()->image) }}" alt="User Image" />
         <div>
             <p class="app-sidebar__user-name">{{ Auth::user()->name }}</p>
             <p class="app-sidebar__user-designation">{{ Auth::user()->user_name }}</p>

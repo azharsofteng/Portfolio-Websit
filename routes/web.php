@@ -38,6 +38,9 @@ Route::middleware('auth')->group( function () {
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
     Route::put('/admin', [AuthenticationController::class, 'passwordUpdate'])->name('password.change');
 
+    Route::get('profile', [AuthenticationController::class, 'profile'])->name('profile');
+    Route::put('profile', [AuthenticationController::class, 'profileUpdate'])->name('profile.update');
+
     Route::resource('category', CategoryController::class)->except('create', 'show');
 
     Route::resource('portfolio', PortfolioController::class)->except('show');
