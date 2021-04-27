@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AuthenticationController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('blogs', [HomeController::class, 'blog'])->name('blogs');
 
 Route::post('contact', [ContactController::class, 'contactStore'])->name('contact.store');
 // ******** Admin panel Route ********
@@ -48,6 +50,8 @@ Route::middleware('auth')->group( function () {
     Route::resource('service', ServiceController::class)->except('show', 'create');
 
     Route::resource('resume', ResumeController::class)->except('show');
+
+    Route::resource('blog', BlogController::class);
     
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 });

@@ -37,6 +37,9 @@
                 <li>
                     <a class="treeview-item" href="{{ route('resume.create') }}"><i class="icon fa fa-circle-o"></i> Add Resume </a>
                 </li>
+                <li>
+                    <a class="treeview-item" href="{{ route('blog.create') }}"><i class="icon fa fa-circle-o"></i> Add Blog Post </a>
+                </li>
             </ul>
         </li>
         <li>

@@ -21,4 +21,10 @@ class HomeController extends Controller
         $experience_resume = Resume::where('type', 'experience')->latest()->get();
         return view('website', compact('about', 'categories', 'portfolios', 'services', 'education_resume', 'experience_resume'));
     }
+
+    public function blog()
+    {
+        $about = About::first();
+        return view('blog', compact('about'));
+    }
 }
