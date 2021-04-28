@@ -12,28 +12,28 @@
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#hero-area">
+                <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">
+                    <a class="nav-link" href="{{ route('home') }}#about">
                         About
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">
+                    <a class="nav-link" href="{{ route('home') }}#services">
                         Services
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#resume">
+                    <a class="nav-link" href="{{ route('home') }}#resume">
                         Resume
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#portfolios">
+                    <a class="nav-link" href="{{ route('home') }}#portfolios">
                         Work
                     </a>
                 </li>
@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">
+                    <a class="nav-link" href="{{ route('home') }}#contact">
                         Contact
                     </a>
                 </li>
@@ -59,22 +59,28 @@
     <!-- Mobile Menu Start -->
     <ul class="onepage-nev mobile-menu">
         <li>
-            <a href="#home">Home</a>
+            <a href="{{ route('home') }}#home">Home</a>
         </li>
         <li>
-            <a href="#about">about</a>
+            <a href="{{ route('home') }}#about">about</a>
         </li>
         <li>
-            <a href="#services">Services</a>
+            <a href="{{ route('home') }}#services">Services</a>
         </li>
         <li>
-            <a href="#resume">resume</a>
+            <a href="{{ route('home') }}#resume">resume</a>
         </li>
         <li>
-            <a href="#portfolio">Work</a>
+            <a href="{{ route('home') }}#portfolio">Work</a>
         </li>
         <li>
-            <a href="#contact">Contact</a>
+            <a href="{{ route('blogs') }}">Blog</a>
+        </li>
+        <li>
+            <a href="#">Events</a>
+        </li>
+        <li>
+            <a href="{{ route('home') }}#contact">Contact</a>
         </li>
     </ul>
     <!-- Mobile Menu End -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Portfolio;
 use App\Models\Resume;
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function blog()
     {
         $about = About::first();
-        return view('blog', compact('about'));
+        $blogs = Blog::latest()->get();
+        return view('blog', compact('about', 'blogs'));
     }
 }

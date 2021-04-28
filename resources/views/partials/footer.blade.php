@@ -20,7 +20,7 @@
                             <a class="instagram" href="#"><i class="icon-social-google"></i></a>
                         </li>
                     </ul>
-                    <p>Copyright © {{ date('Y') }} Naim All Right Reserved</p>
+                    <p>Copyright © {{ date('Y') }} OhiduzzamanIt All Right Reserved</p>
                 </div>
             </div>
         </div>

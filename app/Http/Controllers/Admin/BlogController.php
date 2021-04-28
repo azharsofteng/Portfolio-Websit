@@ -25,7 +25,7 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required|string|min:3',
             'date' => 'required',
-            'image' => 'required|mimes:jpg, png, bmp, jpeg',
+            'image' => 'required|mimes:jpg,png,bmp,jpeg',
         ]);
         
         $slug = Str::slug($request->title);
@@ -54,7 +54,7 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required|string|min:3',
             'date' => 'required',
-            'image' => 'mimes:jpg, png, bmp, jpeg',
+            'image' => 'mimes:jpg,png,bmp,jpeg',
         ]);
 
         $blog = Blog::findOrFail($id);
