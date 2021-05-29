@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('blogs', [HomeController::class, 'blog'])->name('blogs');
+Route::get('single-blog/{slug}', [HomeController::class, 'singleBlog'])->name('single-blog');
 
 Route::post('contact', [ContactController::class, 'contactStore'])->name('contact.store');
 // ******** Admin panel Route ********

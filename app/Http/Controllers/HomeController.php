@@ -29,4 +29,11 @@ class HomeController extends Controller
         $blogs = Blog::latest()->get();
         return view('blog', compact('about', 'blogs'));
     }
+
+    public function singleBlog($slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+        $about = About::first();
+        return view('singleBlog', compact('blog', 'about'));
+    }
 }

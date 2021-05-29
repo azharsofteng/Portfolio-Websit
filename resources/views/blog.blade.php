@@ -1,5 +1,5 @@
 @extends('layouts.website-master')
-@section('title', 'Home')
+@section('title', 'Blog')
 @section('user-content')
 <section id="blog" class="mb-5" style="margin-top: 60px;">
     <div class="blog-cover">
@@ -14,9 +14,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $blog->title }}</h5>
                         <div>
-                            {{ $blog->description }}
+                            {{ Str::limit($blog->description, 120, '...') }}
                         </div>
-                        <a href="#" class="btn btn-info btn-sm mt-2">Read more</a>
+                        <a href="{{ route('single-blog', $blog->slug) }}" class="btn btn-info btn-sm mt-2">Read more</a>
                     </div>
                 </div>
             </div>
