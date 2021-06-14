@@ -296,7 +296,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Subject" id="msg_subject" class="form-control" data-error="Please enter your subject" />
+                                        <input type="text" placeholder="Subject" id="msg_subject" name="subject" class="form-control" data-error="Please enter your subject" />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

@@ -54,5 +54,6 @@ Route::middleware('auth')->group( function () {
 
     Route::resource('blog', BlogController::class);
     
-    Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('contacts', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('get_contact/{id}', [ContactController::class, 'showContact']);
 });
