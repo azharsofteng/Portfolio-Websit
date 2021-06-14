@@ -1,5 +1,8 @@
 @extends('layouts.admin-master')
 @section('title','Edit blog Post')
+@push('admin-css')
+<link href="{{ asset('summernote/summernote-bs4.min.css') }}" rel="stylesheet">
+@endpush
 @section('admin_content')
 <div class="app-title">
     <div>
@@ -57,7 +60,7 @@
             </div>
             <div class="col-md-12">
                 <label for="description">Blog Description</label>
-                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="Enter Blog Description">{{ $blog->description }}</textarea>
+                <textarea name="description" id="summernote" placeholder="Enter Blog Description">{{ $blog->description }}</textarea>
             </div>
         </div>
         <div class="tile-footer text-right">
@@ -69,6 +72,13 @@
 </div>
 @endsection
 @push('admin-js')
+<script src="{{ asset('summernote/summernote-bs4.min.js') }}"></script>
+<script>
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 200
+    });
+</script>
 <script>
     function readURL(input) {
     if (input.files && input.files[0]) {
