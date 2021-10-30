@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="tile-footer text-center">
-            <button class="btn btn-primary " type="submit">Create</button>
+            <button class="btn btn-primary " type="submit">Update</button>
         </div>
         </div>
         </form>

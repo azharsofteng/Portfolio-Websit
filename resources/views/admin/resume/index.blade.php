@@ -16,33 +16,33 @@
             <div class="table-responsive">
             <table class="table table-hover table-bordered text-center" id="sampleTable">
                 <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Resume Type</th>
-                    <th>Degree & Designation</th>
-                    <th>Session & Year</th>
-                    <th>Short Details</th>
-                    <th>Action</th>
-                </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Resume Type</th>
+                        <th>Degree & Designation</th>
+                        <th>Session & Year</th>
+                        <th>Short Details</th>
+                        <th>Action</th>
+                    </tr>
                 </thead>
                 <tbody>
-                @foreach ($resumes as $key=>$item)
-                <tr>
-                    <td>{{ $key + 1 }}</td>
-                    <td>{{ $item->type }}</td>
-                    <td>{{ $item->degree_and_designation }}</td>
-                    <td>{{ $item->session_and_year }}</td>
-                    <td>{{ Str::limit($item->short_description, 50) }}</td>
-                    <td>
-                        <a href="{{ route('resume.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="deleteResume({{ $item->id }})"><i class="fa fa-trash"></i></button>
-                        <form id="delete-form-{{ $item->id }}" action="{{ route('resume.destroy',$item) }}" method="POST" style="display: none;">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
+                    @foreach ($resumes as $key=>$item)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $item->type }}</td>
+                        <td>{{ $item->degree_and_designation }}</td>
+                        <td>{{ $item->session_and_year }}</td>
+                        <td>{{ Str::limit($item->short_description, 50) }}</td>
+                        <td>
+                            <a href="{{ route('resume.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="deleteResume({{ $item->id }})"><i class="fa fa-trash"></i></button>
+                            <form id="delete-form-{{ $item->id }}" action="{{ route('resume.destroy',$item) }}" method="POST" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
             </div>

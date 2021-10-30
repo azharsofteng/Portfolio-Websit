@@ -18,7 +18,7 @@
                     <a class="treeview-item" href="{{ route('about.edit') }}"><i class="icon fa fa-circle-o"></i> Update About</a>
                 </li>
                 <li>
-                    <a class="treeview-item" href="" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Update Profile</a>
+                    <a class="treeview-item" href="{{ route('profile') }}" rel="noopener"><i class="icon fa fa-circle-o"></i> Update Profile</a>
                 </li>
             </ul>
         </li>
