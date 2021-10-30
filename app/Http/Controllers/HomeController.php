@@ -34,6 +34,7 @@ class HomeController extends Controller
     {
         $blog = Blog::where('slug', $slug)->first();
         $about = About::first();
-        return view('singleBlog', compact('blog', 'about'));
+        $latestBlog = Blog::latest()->get()->take(4);
+        return view('singleBlog', compact('blog', 'about', 'latestBlog'));
     }
 }

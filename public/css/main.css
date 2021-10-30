@@ -1124,3 +1124,18 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 #copyright p a:hover {
   color: #00b4d9;
 }
+
+.blog-cover, .single-blog-cover {
+  background-image: url('../img/background/blog-1.jpg');
+  width: 100%;
+  padding: 100px 0px;
+  background-position: center;
+}
+.single-title {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.latest-title {
+  font-size: 18px;
+  color: #000;
+}

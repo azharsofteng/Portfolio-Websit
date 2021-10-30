@@ -32,7 +32,7 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $blog->title }}</td>
                                 <td>{{ $blog->date }}</td>
-                                <td>{{ Str::limit($blog->description, 100) }}</td>
+                                <td>{!! Str::limit($blog->description, 80) !!}</td>
                                 <td>
                                     @if ($blog->image != '')
                                         <img style="height: 40px; width:50px;" src="{{ asset($blog->image) }}" alt="">
