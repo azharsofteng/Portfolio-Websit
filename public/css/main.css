@@ -1139,3 +1139,51 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   font-size: 18px;
   color: #000;
 }
+
+.blog-card, .latest-blog {
+  box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  border: none;
+}
+
+.blog-body {
+  height: 230px;
+}
+
+.outlineSocialShare i {
+  display: inline;
+  text-align: center;
+  color: #979797!important;
+  padding: 0 0.5rem 0.25rem 0.5rem;
+  margin: 0 0.5rem 0.25rem 0.5rem;
+  width: 7rem;
+  font-size: 1.4rem;
+  position: relative;
+  bottom: 0px;
+  transition: all 0.25s ease;
+  border-bottom: 3px solid #979797;
+  border-radius: 50%;
+}
+
+.outlineSocialShare i:hover {
+  bottom: 0.25rem;
+  border-radius: 50%;
+}
+
+.outlineSocialShare i.fa-twitter:hover {
+  color: #00cdff!important;
+  border-bottom: 3px solid #00cdff;
+}
+
+.outlineSocialShare i.fa-facebook:hover {
+  color: #305c99!important;
+  border-bottom: 3px solid #305c99;
+}
+
+.outlineSocialShare i.fa-linkedin:hover {
+  color: #007bb6!important;
+  border-bottom: 3px solid #007bb6;
+}
+.outlineSocialShare i.fa-instagram:hover {
+  color: #D5264C!important;
+  border-bottom: 3px solid #D5264C;
+}

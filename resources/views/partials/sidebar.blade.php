@@ -40,6 +40,9 @@
                 <li>
                     <a class="treeview-item" href="{{ route('blog.create') }}"><i class="icon fa fa-circle-o"></i> Add Blog Post </a>
                 </li>
+                <li>
+                    <a class="treeview-item" href="{{ route('patner.index') }}"><i class="icon fa fa-circle-o"></i> Add Partner </a>
+                </li>
             </ul>
         </li>
         <li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PatnerController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ResumeController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -49,6 +50,7 @@ Route::middleware('auth')->group( function () {
     Route::resource('portfolio', PortfolioController::class)->except('show');
 
     Route::resource('service', ServiceController::class)->except('show', 'create');
+    Route::resource('patner', PatnerController::class)->except('show', 'create');
 
     Route::resource('resume', ResumeController::class)->except('show');
 

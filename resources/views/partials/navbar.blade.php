@@ -43,11 +43,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Events
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}#contact">
                         Contact
                     </a>
@@ -75,9 +70,6 @@
         </li>
         <li>
             <a href="{{ route('blogs') }}">Blog</a>
-        </li>
-        <li>
-            <a href="#">Events</a>
         </li>
         <li>
             <a href="{{ route('home') }}#contact">Contact</a>

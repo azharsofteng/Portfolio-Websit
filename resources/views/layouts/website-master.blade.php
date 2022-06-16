@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/nivo-lightbox.css') }}" />
         <!-- Animate -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
         <!-- Main Style -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
         <!-- Responsive Style -->
@@ -64,5 +65,36 @@
         <script src="{{ asset('js/nivo-lightbox.js') }}"></script>
         <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                center: true,
+                loop: true,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                // autoplayHoverPause:true,
+                margin: 15,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 6
+                    },
+                    1600: {
+                        items: 7
+                    }
+                }
+            });
+    
+            $(function () {
+                $('#portfolio-mixitup').mixItUp();
+            });
+    
+        </script>
     </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Patner;
 use App\Models\Portfolio;
 use App\Models\Resume;
 use App\Models\Service;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $services = Service::latest()->get()->take(4);
         $education_resume = Resume::where('type', 'education')->latest()->get();
         $experience_resume = Resume::where('type', 'experience')->latest()->get();
-        return view('website', compact('about', 'categories', 'portfolios', 'services', 'education_resume', 'experience_resume'));
+        $partners = Patner::latest()->get();
+        return view('website', compact('about', 'categories', 'portfolios', 'services', 'education_resume', 'experience_resume', 'partners'));
     }
 
     public function blog()

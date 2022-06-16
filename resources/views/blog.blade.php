@@ -9,9 +9,9 @@
         <div class="row">
             @foreach ($blogs as $blog)
             <div class="col-md-4 mt-4">
-                <div class="card">
+                <div class="card blog-card">
                     <img style="height: 200px;" src="{{ asset($blog->image) }}" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body blog-body">
                         <h5 class="card-title">{{ $blog->title }}</h5>
                         <div>
                             {!! Str::limit($blog->description, 120, '...') !!}

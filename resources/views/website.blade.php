@@ -207,7 +207,7 @@
                                         <a class="lightbox preview" href="{{ asset($portfolio->image) }}">
                                             <i class="icon-eye"></i>
                                         </a>
-                                        <a class="link" href="#">
+                                        <a class="link" href="{{ $portfolio->url }}">
                                             <i class="icon-link"></i>
                                         </a>
                                     </div>
@@ -264,6 +264,27 @@
     </div>
 </section>
 <!-- Counter Area End-->
+
+ <!-- Client section start -->
+ <section id="client" class="mt-3">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Partners</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+        </div>
+        <div class="row my-4">
+            <div class="owl-carousel owl-theme">
+                @foreach ($partners as $item)
+                <div class="item">
+                    <img src="{{ $item->logo }}" alt="">
+                    <p class="text-center">{{ $item->name }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Client section end -->
 
 <!-- Contact Section Start -->
 <section id="contact" class="section-padding">
